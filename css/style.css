@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    font-size: 10px;
+
+    --corFundo:  rgb(202, 212, 234);
+    --corForm: rgb(211, 215, 246);
+    --corInput:rgb(250, 255, 230);
+  }
+  
+  body {
+    font: 1.5rem 'Open Sans', sans-serif;
+    line-height: 1.5;
+    color: #777;
+  }
+  .cadastro{ 
+   display: grid;
+     height: 92vh;
+     background-color: var(--corFundo);
+     grid-template-columns: 1fr 1fr 1fr 1fr;
+     grid-template-rows:  1fr 3fr 3fr 1fr;
+     grid-template-areas: 
+   "vazio1 vazio4 vazio4 vazio2 "
+   "vazio1 centro centro vazio2 "
+   "vazio1 centro centro vazio2 "
+   "vazio1 vazio3 vazio3 vazio2 ";
+  }
+  .cadastro #cadastroForm{
+    display: flex;
+    border-radius: 6%;
+    flex-direction: column;
+    max-width: 50vw;
+    max-height: 80vh;
+    justify-content: center;
+    gap: 1.5%;
+    grid-area: centro;
+    align-items: center;
+    padding-top: 4%;
+    padding-bottom: 4%;
+   
+
+    background-color: var(--corForm);
+  }
+
+  .cadastro #cadastroForm input{
+
+    border: none;
+    height: 40%;
+    width: 70%;
+    border-radius: 5%;
+     background-color: var(--corInput);
+  }
+
+  .cadastro #cadastroForm button{
+    height: 35%;
+    width: 15%;
+    margin-right: 50%;
+    border: none;
+    border-radius: 20%;
+
+  }
+
+  .cadastro #cadastroForm label{
+    margin-right: 47%;
+  }
+  
+
+  .login{
+    display: none;
+      height: 92vh;
+      background-color: var(--corFundo);
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows:  1fr 3fr 3fr 1fr;
+      grid-template-areas: 
+    "vazio1 vazio4 vazio4 vazio2 "
+    "vazio1 centro centro vazio2 "
+    "vazio1 centro centro vazio2 "
+    "vazio1 vazio3 vazio3 vazio2 ";
+   }
+
+   .login #loginForm{
+    display: flex;
+    border-radius: 6%;
+    flex-direction: column;
+    max-width: 50vw;
+    max-height: 80vh;
+    justify-content: center;
+    gap: 4.7%;
+    grid-area: centro;
+    align-items: center;
+   
+   
+
+    background-color: var(--corForm);
+  }
+
+   .login #loginForm input{
+
+    border: none;
+    height: 10%;
+    width: 70%;
+    border-radius: 5%;
+     background-color: var(--corInput);
+  }
+  .login #loginForm label{
+    margin-right: 57%;
+  }
+ 
+  .login #loginForm button{
+    height: 10%;
+    width: 15%;
+    margin-right: 50%;
+    border: none;
+    border-radius: 20%;
+
+  }
+
+  .princi{ 
+    display: none;
+  }
+  
+  

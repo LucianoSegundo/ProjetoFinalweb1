@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+    <script type="module" src="js/main.js"></script>
+</head>
+
+<body>  
+<h1> Iscoito Trelloso Client</h1>
+<div></div>
+<div class="cadastro">
+    <form id="cadastroForm">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome">
+
+        <label for="apelido">Nome de Usuário</label>
+        <input type="text" name="apelido" id="apelido">
+        
+        <label for="imagem">URL Para Imagem de Perfil</label>
+        <input type="text" name="imagem" id="imagem">
+        
+        <label for="senha">Senha</label>
+        <input type="password" name="senha" id="senha" minlength="8" required >
+        
+        <label for="ConfSenha">Confirmar Senha</label>
+        <input type="password" name="ConfSenha" id="ConfSenha" minlength="8" required >
+        
+        <button type="submit"> cadastrar</button>
+        <p>Já possui conta? então <a href="#" id="logar">clique aqui para fazer o login</a></p>
+        
+    </form>
+</div>
+<div class="login">
+    <form id="loginForm">
+        
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nomeLogin">
+
+        <label for="senha">Senha</label>
+        <input type="password" name="senha" id="senhaLogin" minlength="8" required >
+    
+        <button type="submit"> Entrar</button>
+        <p>Não possui conta? então <a href="#" id="Cadastrar">clique aqui para criar uma.</a></p>
+
+        
+    </form>
+
+
+</div>
+<div class="princi"></div>
+</body>
+
+</html>
