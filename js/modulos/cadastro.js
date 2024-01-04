@@ -1,6 +1,6 @@
 let aCadastro = document.getElementById("logar");
 
-let trocarTela = function(event) {
+let trocarTela = function (event) {
   event.preventDefault();
 
   let irLogar = document.getElementsByClassName("login");
@@ -46,7 +46,9 @@ formulario.addEventListener("submit", function cadastratForm(event) {
 
 async function enviarjson(data) {
   try {
-    const response = await fetch("http://192.168.89.186:8087/api/v1/users", {
+
+    // const response = await fetch("http://192.168.89.186:8087/api/v1/users", {
+    const response = await fetch("http://localhost:8087/api/v1/users", {
       method: "POST", // or 'PUT'
       headers: {
         "Content-Type": "application/json",
