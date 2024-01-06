@@ -1,22 +1,22 @@
 let alogin = document.getElementById("Cadastrar");
 
 alogin.addEventListener("click", function trocarTela(event) {
-  event.preventDefault();
 
-  let irLogar = document.getElementsByClassName("login");
-  let sairCadastro = document.getElementsByClassName("cadastro");
-  for (let i = 0; i < irLogar.length; i++) {
-    irLogar[i].style.display = "none";
-  }
-  for (let i = 0; i < sairCadastro.length; i++) {
-    sairCadastro[i].style.display = "grid";
-  }
+  event.preventDefault();
+  formulario.reset();
+
+  document.getElementById("login").style.display = "none";
+  document.getElemenById("cadastro").style.display = "grid";
+
+
 });
 
 let formlogin = document.getElementById("loginForm");
 
 formlogin.addEventListener("submit", function (event) {
+
   event.preventDefault()
+
   let login = document.getElementById("nomeLogin");
   let senha = document.getElementById("senhaLogin");
 
@@ -27,15 +27,19 @@ formlogin.addEventListener("submit", function (event) {
 
 
 async function pedirToken(nome, senha, formulario) {
+
   try {
 
     // const response = await fetch("http://192.168.89.186:8087/api/v1//auth/token", {
+
     const response = await fetch("http://localhost:8087/api/v1/auth/token", {
 
       method: "POST", // or 'PUT'
+
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
+
       body: new URLSearchParams({ username: nome, password: senha })
     });
 
@@ -43,17 +47,20 @@ async function pedirToken(nome, senha, formulario) {
     if (response.ok) {
 
       const result = await response.json();
+
       console.log("Success:", result);
 
-      localStorage.setItem("token", JSON.stringify(result));
+      localStorage.setItem("token", `${result.token_type} ${result.access_token}`);
 
       formulario.reset()
-      avancarTela();
+
+      LogeDeslog("ir");
 
     }
     else {
-      console.log("falah");
+
       alert("nome ou senha incorretos");
+
       formulario.reset()
     }
 
@@ -63,18 +70,27 @@ async function pedirToken(nome, senha, formulario) {
   }
 }
 
-let avancarTela = function () {
+let LogeDeslog = function (sentido) {
+
+  if (sentido === "ir") {
+
+    document.getElementById("login").style.display = "none";
+    document.getElementById("princi").style.display = "grid";
+
+    let sair = document.getElementById("icone");
+    sair.style.display = "inline";
+  }
+
+  if (sentido === "voltar") {
+
+    document.getElementById("login").style.display = "grid";
+    document.getElementById("princi").style.display = "none";
+
+  }
 
 
-  let irLogar = document.getElementsByClassName("login");
-  let irTprincipal = document.getElementsByClassName("princi");
-  for (let i = 0; i < irLogar.length; i++) {
-    irLogar[i].style.display = "none";
-  }
-  for (let i = 0; i < irTprincipal.length; i++) {
-    irTprincipal[i].style.display = "grid";
-  }
+
 }
 
+export default { alogin, LogeDeslog  };
 
-export { alogin, avancarTela };

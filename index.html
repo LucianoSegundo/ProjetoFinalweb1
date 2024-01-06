@@ -9,49 +9,66 @@
     <script type="module" src="js/main.js"></script>
 </head>
 
-<body>  
-<h1> Iscoito Trelloso Client</h1>
-<div></div>
-<div class="cadastro">
-    <form id="cadastroForm">
-        <label for="nome">Nome</label>
-        <input type="text" name="nome" id="nome">
+<body>
+    <div id="barra">
+        <h1> Iscoito Trelloso Client</h1>
+        <img id="icone" src="icones/arrow-right-from-bracket-solid.svg" alt="sair">
+    </div>
 
-        <label for="apelido">Nome de Usuário</label>
-        <input type="text" name="apelido" id="apelido">
-        
-        <label for="imagem">URL Para Imagem de Perfil</label>
-        <input type="text" name="imagem" id="imagem">
-        
-        <label for="senha">Senha</label>
-        <input type="password" name="senha" id="senha" minlength="8" required >
-        
-        <label for="ConfSenha">Confirmar Senha</label>
-        <input type="password" name="ConfSenha" id="ConfSenha" minlength="8" required >
-        
-        <button type="submit"> cadastrar</button>
-        <p>Já possui conta? então <a href="#" id="logar">clique aqui para fazer o login</a></p>
-        
-    </form>
-</div>
-<div class="login">
-    <form id="loginForm">
-        
-        <label for="nome">Nome</label>
-        <input type="text" name="nome" id="nomeLogin" minlength="4" required>
+    <div id="cadastro">
+        <form id="cadastroForm">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome">
 
-        <label for="senha">Senha</label>
-        <input type="password" name="senha" id="senhaLogin" minlength="8" required >
-    
-        <button type="submit"> Entrar</button>
-        <p>Não possui conta? então <a href="#" id="Cadastrar">clique aqui para criar uma.</a></p>
+            <label for="apelido">Nome de Usuário</label>
+            <input type="text" name="apelido" id="apelido">
 
+            <label for="imagem">URL Para Imagem de Perfil</label>
+            <input type="text" name="imagem" id="imagem">
+
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senha">
+
+            <label for="ConfSenha">Confirmar Senha</label>
+            <input type="password" name="ConfSenha" id="ConfSenha">
+
+            <button type="submit"> cadastrar</button>
+            <p>Já possui conta? então <a href="#" id="logar">clique aqui para fazer o login</a></p>
+
+        </form>
+    </div>
+    <div id="login">
+        <form id="loginForm">
+
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nomeLogin">
+
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senhaLogin">
+
+            <button type="submit"> Entrar</button>
+            <p>Não possui conta? então <a href="#" id="Cadastrar">clique aqui para criar uma.</a></p>
+
+
+        </form>
+
+
+    </div>
+    <div id="esconderDeslogaar">
+
+        <div id="deslogar">
+            
+            <p>deseja mesmo sair?</p>
+            
+            <div>
+                <button id="nao">Não</button>
+                <button id="sim">Sim</button>
+            </div>
+            
+        </div>
+    </div>
         
-    </form>
-
-
-</div>
-<div class="princi"></div>
+    <div id="princi"></div>
 </body>
 
 </html>

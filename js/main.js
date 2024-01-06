@@ -1,15 +1,13 @@
-import { formulario, aCadastro } from "./modulos/cadastro.js";
-import { alogin, avancarTela } from "./modulos/login.js";
+import cadastro from "./modulos/cadastro.js";
+import logout from "./modulos/logout.js";
+import login from "./modulos/login.js";
 
 
 if (null === localStorage.getItem("token")) {
 
-    let telaLogin = document.getElementsByClassName("login");
-
-    for (let i = 0; i < telaLogin.length; i++) {
-        telaLogin[i].style.display = "grid";
-    }
+    let telaLogin = document.getElementById("login").style.display = "grid";
+    
 
 }
-else avancarTela();
+else login.avancarTela();
 

@@ -10,6 +10,8 @@
     --corFundo:  rgb(202, 212, 234);
     --corForm: rgb(211, 215, 246);
     --corInput:rgb(250, 255, 230);
+    --corBorda:  rgb(173, 181, 242);
+    --corbordabotao: rgb(205, 211, 220);
   }
   
   body {
@@ -17,7 +19,29 @@
     line-height: 1.5;
     color: #777;
   }
-  .cadastro{ 
+
+  #barra{
+    display: flex;
+    width: 100vw;
+    height: 8vh;
+    background-color: rgb(253, 253, 253);
+    align-items: center;
+    justify-content: space-between;
+  }
+  #barra h1{
+    width: 48%;
+    font-size:5vh;
+    margin-left: 1vw;
+
+    
+  }
+  
+  #barra #icone{
+    width: 2vw;
+    margin-right: 1vw;
+    display: none;
+  }
+  #cadastro{ 
    display: none;
      height: 92vh;
      background-color: var(--corFundo);
@@ -29,7 +53,7 @@
    "vazio1 centro centro vazio2 "
    "vazio1 vazio3 vazio3 vazio2 ";
   }
-  .cadastro #cadastroForm{
+  #cadastro #cadastroForm{
     display: flex;
     border-radius: 6%;
     flex-direction: column;
@@ -41,12 +65,12 @@
     align-items: center;
     padding-top: 4%;
     padding-bottom: 4%;
-   
-
     background-color: var(--corForm);
+    border: solid;
+    border-color: var(--corBorda);
   }
 
-  .cadastro #cadastroForm input{
+  #cadastro #cadastroForm input{
 
     border: none;
     height: 40%;
@@ -55,21 +79,23 @@
      background-color: var(--corInput);
   }
 
-  .cadastro #cadastroForm button{
+  #cadastro #cadastroForm button{
     height: 35%;
     width: 15%;
     margin-right: 50%;
     border: none;
     border-radius: 20%;
+    border: solid;
+    border-color: var(--corbordabotao);
 
   }
 
-  .cadastro #cadastroForm label{
+  #cadastro #cadastroForm label{
     margin-right: 47%;
   }
   
 
-  .login{
+  #login{
     display: none;
       height: 92vh;
       background-color: var(--corFundo);
@@ -82,7 +108,7 @@
     "vazio1 vazio3 vazio3 vazio2 ";
    }
 
-   .login #loginForm{
+  #login #loginForm{
     display: flex;
     border-radius: 6%;
     flex-direction: column;
@@ -92,13 +118,15 @@
     gap: 4.7%;
     grid-area: centro;
     align-items: center;
+    border: solid;
+    border-color: var(--corBorda);
    
    
 
     background-color: var(--corForm);
   }
 
-   .login #loginForm input{
+  #login #loginForm input{
 
     border: none;
     height: 10%;
@@ -106,21 +134,68 @@
     border-radius: 5%;
      background-color: var(--corInput);
   }
-  .login #loginForm label{
+  #login #loginForm label{
     margin-right: 57%;
   }
  
-  .login #loginForm button{
+  #login #loginForm button{
     height: 10%;
     width: 15%;
     margin-right: 50%;
     border: none;
     border-radius: 20%;
-
+    border: solid;
+    border-color: var(--corbordabotao);
   }
 
-  .princi{ 
+  #princi{ 
     display: none;
+  }
+
+ #esconderDeslogaar{
+  display: none;
+background-color: rgba(26, 24, 24, 0.379);
+ height: 100vh;
+ width: 100vw;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+
+ }
+
+  #deslogar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 35vh;
+    width: 35vw;
+    background-color: var(--corForm);
+    gap: 8vh;
+    font-size: 4vh;
+    border: solid;
+    border-color: var(--corBorda);
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  }
+
+  #deslogar div{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 10vw;
+  }
+  #deslogar button{
+    height: 4.5vh;
+    width: 10vw;
+    font-size: 1.5vw;
+    border: none;
+    border-radius: 20%;
+    border: solid;
+    border-color: var(--corbordabotao);
   }
   
   
