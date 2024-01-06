@@ -5,7 +5,7 @@ let trocarTela = function (event) {
   event.preventDefault();
 
   document.getElementById("login").style.display = "grid";
-  ocument.getElementById("cadastro").style.display = "none";
+  document.getElementById("cadastro").style.display = "none";
   
 }
 

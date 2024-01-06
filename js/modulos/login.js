@@ -3,10 +3,10 @@ let alogin = document.getElementById("Cadastrar");
 alogin.addEventListener("click", function trocarTela(event) {
 
   event.preventDefault();
-  formulario.reset();
+  formlogin.reset();
 
   document.getElementById("login").style.display = "none";
-  document.getElemenById("cadastro").style.display = "grid";
+  document.getElementById("cadastro").style.display = "grid";
 
 
 });
