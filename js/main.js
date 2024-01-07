@@ -1,13 +1,8 @@
 import cadastro from "./modulos/cadastro.js";
 import logout from "./modulos/logout.js";
 import login from "./modulos/login.js";
+import alterar from "./modulos/alterar.js";
 
 
-if (null === localStorage.getItem("token")) {
-
-    let telaLogin = document.getElementById("login").style.display = "grid";
-    
-
-}
-else login.avancarTela();
+login.TestarLogin();
 

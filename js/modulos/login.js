@@ -1,3 +1,6 @@
+import alterar from "./alterar.js";
+
+// trocando da tela login para cadastro
 let alogin = document.getElementById("Cadastrar");
 
 alogin.addEventListener("click", function trocarTela(event) {
@@ -11,6 +14,7 @@ alogin.addEventListener("click", function trocarTela(event) {
 
 });
 
+// capiturando informações do form
 let formlogin = document.getElementById("loginForm");
 
 formlogin.addEventListener("submit", function (event) {
@@ -19,13 +23,13 @@ formlogin.addEventListener("submit", function (event) {
 
   let login = document.getElementById("nomeLogin");
   let senha = document.getElementById("senhaLogin");
-
+  
   pedirToken(login.value, senha.value, this);
 
 
 })
 
-
+//requerindo token de acesso e guardando no local storage como requerido pela disciplina.
 async function pedirToken(nome, senha, formulario) {
 
   try {
@@ -54,6 +58,8 @@ async function pedirToken(nome, senha, formulario) {
 
       formulario.reset()
 
+    
+
       LogeDeslog("ir");
 
     }
@@ -70,21 +76,41 @@ async function pedirToken(nome, senha, formulario) {
   }
 }
 
-let LogeDeslog = function (sentido) {
+
+//ir para a tela principal e voltar
+let user ;
+let LogeDeslog =  async function (sentido) {
 
   if (sentido === "ir") {
 
     document.getElementById("login").style.display = "none";
     document.getElementById("princi").style.display = "grid";
 
-    let sair = document.getElementById("icone");
-    sair.style.display = "inline";
+    document.getElementById("icone").style.display = "inline";
+    document.getElementById("usuario").style.display = "flex";
+
+//receber dados do Usuário e adicionar a tela 
+     user = await alterar.requisitarDados();
+
+    document.getElementById("foto").src = user.avatar_url;
+    document.getElementById("infoFoto").src = user.avatar_url;
+    console.log(user.username, user.name)
+
+    
+    document.getElementById("infoApelido").textContent ='Usuário: '+user.username;
+    
+   document.getElementById("infoNome").textContent ='Nome: '+ user.name;
+
+   
   }
 
   if (sentido === "voltar") {
 
     document.getElementById("login").style.display = "grid";
     document.getElementById("princi").style.display = "none";
+    document.getElementById("usuario").style.display = "none";
+
+
 
   }
 
@@ -92,5 +118,15 @@ let LogeDeslog = function (sentido) {
 
 }
 
-export default { alogin, LogeDeslog  };
+let TestarLogin = function () {
+  if (null === localStorage.getItem("token")) {
+
+    document.getElementById("login").style.display = "grid";
+
+}
+else LogeDeslog("ir");
+  
+}
+
+export default { alogin, TestarLogin,LogeDeslog, user  };
 

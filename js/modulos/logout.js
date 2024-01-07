@@ -6,13 +6,18 @@ Iconedeslogar.addEventListener("click", function (event) {
     esconder.style.display = "inline";
 })
 
-let esconder = document.getElementById("esconderDeslogaar");
+let ClassEsconder = document.getElementsByClassName("esconder");
 
-esconder.addEventListener("click", function(event){
-    event.stopPropagation();
+for(let i =0; i<ClassEsconder.length;i++){
 
-    esconder.style.display = "none";
-})
+    ClassEsconder[i].addEventListener("click", function(event){
+        event.stopPropagation();
+        
+        ClassEsconder[i].style.display = "none";
+    })
+}
+    
+let esconder =document.getElementById("escDeslo");
 
 let botaoSim = document.getElementById("sim");
 
