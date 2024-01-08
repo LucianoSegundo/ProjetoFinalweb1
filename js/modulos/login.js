@@ -52,7 +52,7 @@ async function pedirToken(nome, senha, formulario) {
 
       const result = await response.json();
 
-      console.log("Success:", result);
+      console.log("Success em logar");
 
       localStorage.setItem("token", `${result.token_type} ${result.access_token}`);
 
@@ -79,7 +79,7 @@ async function pedirToken(nome, senha, formulario) {
 
 //ir para a tela principal e voltar
 let user ;
-let LogeDeslog =  async function (sentido) {
+let LogeDeslog =  function (sentido) {
 
   if (sentido === "ir") {
 
@@ -89,18 +89,7 @@ let LogeDeslog =  async function (sentido) {
     document.getElementById("icone").style.display = "inline";
     document.getElementById("usuario").style.display = "flex";
 
-//receber dados do Usuário e adicionar a tela 
-     user = await alterar.requisitarDados();
-
-    document.getElementById("foto").src = user.avatar_url;
-    document.getElementById("infoFoto").src = user.avatar_url;
-    console.log(user.username, user.name)
-
-    
-    document.getElementById("infoApelido").textContent ='Usuário: '+user.username;
-    
-   document.getElementById("infoNome").textContent ='Nome: '+ user.name;
-
+    atualizarUsuario(); 
    
   }
 
@@ -118,6 +107,20 @@ let LogeDeslog =  async function (sentido) {
 
 }
 
+let atualizarUsuario = async function(){
+  //receber dados do Usuário e adicionar a tela 
+  user = await alterar.requisitarDados();
+
+  document.getElementById("foto").src = user.avatar_url;
+  document.getElementById("infoFoto").src = user.avatar_url;
+  console.log(user.username, user.name)
+
+  
+  document.getElementById("infoApelido").textContent ='Usuário: '+user.username;
+  
+ document.getElementById("infoNome").textContent ='Nome: '+ user.name;
+}
+
 let TestarLogin = function () {
   if (null === localStorage.getItem("token")) {
 
@@ -128,5 +131,5 @@ else LogeDeslog("ir");
   
 }
 
-export default { alogin, TestarLogin,LogeDeslog, user  };
+export default { alogin, TestarLogin,LogeDeslog, user , atualizarUsuario };
 
