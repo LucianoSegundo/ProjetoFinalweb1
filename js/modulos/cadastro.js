@@ -67,7 +67,7 @@ async function enviarjson(data) {
 
     const result = await response.json();
 
-    console.log("Success:", result);
+    console.log("Successo em cadastrat", result);
 
   } catch (error) {
     

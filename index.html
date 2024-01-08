@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html id="html" lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -9,10 +9,16 @@
     <script type="module" src="js/main.js"></script>
 </head>
 
-<body>
+<body id="body">
     <div id="barra">
-        <h1> Iscoito Trelloso Client</h1>
-        <img id="icone" src="icones/arrow-right-from-bracket-solid.svg" alt="sair">
+        <div>
+            <h1> Iscoito Trelloso Client</h1>
+            <img id="icone" src="icones/arrow-right-from-bracket-solid.svg" alt="sair">
+        </div>
+        <div id="usuario">
+            <p id="dados">informações</p>
+            <img id="foto" src="" alt="imagem usuario">
+        </div>
     </div>
 
     <div id="cadastro">
@@ -40,7 +46,7 @@
     <div id="login">
         <form id="loginForm">
 
-            <label for="nome">Nome</label>
+            <label for="nome">Nome de Usuário</label>
             <input type="text" name="nome" id="nomeLogin">
 
             <label for="senha">Senha</label>
@@ -54,20 +60,83 @@
 
 
     </div>
-    <div id="esconderDeslogaar">
+    <div class="esconder" id="escDeslo">
 
         <div id="deslogar">
-            
-            <p>deseja mesmo sair?</p>
-            
+
+            <p>deseja <br> mesmo sair?</p>
+
             <div>
                 <button id="nao">Não</button>
                 <button id="sim">Sim</button>
             </div>
-            
+
         </div>
     </div>
-        
+
+    <div class="esconder" id="altInfo">
+
+        <div id="informacoer">
+
+            <div id="infoBarra">
+                <div id="info">
+
+                    <h2>Informações</h2>
+                </div>
+                <div id="alt">
+                    <h2>Alterações</h2>
+                </div>
+            </div>
+            <form id="AltForm">
+
+                <label for="Altnome">Nome de Usuário</label>
+                <input type="text" name="Altnome" id="Altnome">
+
+                <label for="Altimagem">URL Para Imagem de Perfil</label>
+                <input type="text" name="Altimagem" id="Altimagem">
+
+                <label for="Altsenha">Senha</label>
+                <input type="password" name="Altsenha" id="Altsenha">
+
+                <label for="AltConfSenha">Confirmar Senha</label>
+                <input type="password" name="AltConfSenha" id="AltConfSenha">
+
+                <button type="submit"> alterar</button>
+
+            </form>
+
+            <div id="exibirInfo">
+
+                <img id="infoFoto" src="" alt="foto">
+                <div>
+                    <p id="infoNome"> </p>
+                    <p id="infoApelido"></p>
+                </div>
+                <button id="deletar">deletar conta</button>
+
+
+            </div>
+
+
+        </div>
+
+        <div class="esconder" id="apagar">
+
+            <div id="apagarConta">
+    
+                <p>deseja <br> excluir sua conta?</p>
+    
+                <div>
+                    <button id="Apanao">Não</button>
+                    <button id="Apasim">Sim</button>
+                </div>
+    
+            </div>
+        </div>
+    
+    </div>
+
+
     <div id="princi"></div>
 </body>
 

@@ -6,17 +6,22 @@ Iconedeslogar.addEventListener("click", function (event) {
     esconder.style.display = "inline";
 })
 
-let esconder = document.getElementById("esconderDeslogaar");
+let ClassEsconder = document.getElementsByClassName("esconder");
 
-esconder.addEventListener("click", function(event){
-    event.stopPropagation();
+for (let i = 0; i < ClassEsconder.length; i++) {
 
-    esconder.style.display = "none";
-})
+    ClassEsconder[i].addEventListener("click", function (event) {
+        event.stopPropagation();
+
+        ClassEsconder[i].style.display = "none";
+    })
+}
+
+let esconder = document.getElementById("escDeslo");
 
 let botaoSim = document.getElementById("sim");
 
-botaoSim.addEventListener("click", function(event){
+botaoSim.addEventListener("click", function (event) {
 
     event.stopPropagation();
 
@@ -25,12 +30,12 @@ botaoSim.addEventListener("click", function(event){
     esconder.style.display = "none";
 
     login.LogeDeslog("voltar");
-    
+
 })
 
-let BotaoNao= document.getElementById("nao");
+let BotaoNao = document.getElementById("nao");
 
-BotaoNao.addEventListener("click", function(event){
+BotaoNao.addEventListener("click", function (event) {
 
     event.stopPropagation();
 
@@ -40,8 +45,8 @@ BotaoNao.addEventListener("click", function(event){
 
 let divDeslogar = document.getElementById("deslogar");
 
-divDeslogar.addEventListener("click", function(event){
+divDeslogar.addEventListener("click", function (event) {
     event.stopPropagation();
 })
 
-export default{Iconedeslogar, esconder, botaoSim, BotaoNao, divDeslogar};
+export default { Iconedeslogar, esconder, botaoSim, BotaoNao, divDeslogar };
