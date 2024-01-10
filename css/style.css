@@ -175,9 +175,6 @@ body {
   border-color: var(--corbordabotao);
 }
 
-#princi {
-  display: none;
-}
 
 .esconder {
   display: none;
@@ -407,4 +404,73 @@ body {
   border-radius: 20%;
   border: solid;
   border-color: var(--corbordabotao);
+}
+
+#princi {
+  display: none;
+  
+
+    height: 92vh;
+    background-color: var(--corFundo);
+    grid-template-columns: 9vw 91vw;
+    grid-template-rows: 1fr 3fr 3fr 1fr;
+    grid-template-areas:
+      "vazio1 vazio2 "
+      "vazio1 vazio2 "
+      "vazio1 vazio2 "
+      "vazio1 vazio2 ";
+  }
+
+#princi #barraLateral {
+  grid-area: vazio1;
+  display: flex;
+  flex-direction: column;
+  font-size: 2vw;
+  width: 9vw;
+  height: 92vh;
+  align-items: center;
+
+  background-color: rgb(147, 174, 236);
+
+}
+
+#princi #barraLateral div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid;
+  font-size: 1vw;
+  border-color:rgb(135, 161, 219);
+  height: 10vh;
+  width: 100%;
+  padding-right: 2vw;
+  padding-left: 2vw;
+
+}
+
+#princi #barraLateral div:hover {
+  background-color: rgb(126, 151, 207);
+}
+#conteudo{
+
+  grid-area: vazio2;
+  height: 92vh;
+  width: 91vw;
+}
+
+#conteudo #odo{
+    display: block;
+    background-color: rgb(255, 115, 0);
+    height: 92vh;
+    width: 91vw;
+  
+}
+#avoritos{
+  
+  display: none;
+  background-color: rgb(255, 0, 98);
+  height: 92vh;
+  width: 91vw;
+
 }

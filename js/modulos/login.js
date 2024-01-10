@@ -14,7 +14,7 @@ alogin.addEventListener("click", function trocarTela(event) {
 
 });
 
-// capiturando informações do form
+// capiturando informações do form para fazer login
 let formlogin = document.getElementById("loginForm");
 
 formlogin.addEventListener("submit", function (event) {
@@ -34,9 +34,9 @@ async function pedirToken(nome, senha, formulario) {
 
   try {
 
-    // const response = await fetch("http://192.168.89.186:8087/api/v1//auth/token", {
+    // const response = await fetch("http://192.168.90.220:8087/api/v1/auth/token", {
 
-    const response = await fetch("http://localhost:8087/api/v1/auth/token", {
+     const response = await fetch("http://localhost:8087/api/v1/auth/token", {
 
       method: "POST", // or 'PUT'
 

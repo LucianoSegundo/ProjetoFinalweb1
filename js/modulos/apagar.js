@@ -1,12 +1,15 @@
 import login from "./login.js";
 import alterar from "./alterar.js";
 
+//ouvindo click no botão de delete para abrir a tela de deleção de conta
 let botaoDelete = document.getElementById("deletar");
 
 botaoDelete.addEventListener("click", function (event) {
     divApagar.style.display = "inline";
 })
 
+
+// ouvindo click no botão que confirma que a conta deve ser encerrada e impedindo que o evento se propague onde ele não deve ser propagado
 let divApagar = document.getElementById("apagar");
 
 let botaoApagarSim = document.getElementById("Apasim");
@@ -40,6 +43,8 @@ apagarConta.addEventListener("click", function (event) {
     event.stopPropagation();
 })
 
+//requisição para excluir conta
+
 let requerirDelete = async function () {
 
 
@@ -47,10 +52,10 @@ let requerirDelete = async function () {
 
         let token = localStorage.getItem("token");
 
-        // const response = await fetch("http://192.168.89.186:8087/api/v1/users/"+usuario.id, {
-
         let usuario = await alterar.requisitarDados();
-        const response = await fetch("http://localhost:8087/api/v1/users/" + usuario.id, {
+        // const response = await fetch("http://192.168.90.220:8087/api/v1/users/"+usuario.id, {
+
+         const response = await fetch("http://localhost:8087/api/v1/users/" + usuario.id, {
 
             method: "DELETE",
             headers: {

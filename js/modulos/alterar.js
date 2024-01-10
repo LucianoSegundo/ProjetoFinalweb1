@@ -8,14 +8,16 @@ let altForm = document.getElementById("AltForm");
 let informações = document.getElementById("exibirInfo");
 let formularioAlt = document.getElementById("altInfo")
 
-abrirAlt.addEventListener("click", async function (event) {
+abrirAlt.addEventListener("click",  function (event) {
   event.preventDefault();
-
-
+  
+  
   formularioAlt.style.display = "flex";
-
-
+  
+  
 })
+
+
 
 // adição da alteração entre tela de informaçõoes e tela de  alteração;
 
@@ -60,7 +62,6 @@ altForm.addEventListener("submit", async function (event) {
 
   event.preventDefault();
 
-  // descobrir porque o form não foi enviado.
   let nome = document.getElementById("Altnome");
   let imagem = document.getElementById("Altimagem");
   let senha = document.getElementById("Altsenha");
@@ -68,22 +69,30 @@ altForm.addEventListener("submit", async function (event) {
 
   let usuario = await requisitarDados();
 
-  if (senha.value === confSenha.value) {
+  if ((senha.value === confSenha.value)) {
+    let nome2 = nome.value;
+    let imagem2 = imagem.value;
+    let senha2 = senha.value;
+   
+     if(nome.value == "") nome2 = usuario.name;
+     if(imagem.value == "") imagem2 = usuario.avatar_url;
+     if(senha.value == "") senha2 = usuario.password;
+    
     let corpo = {
 
-      "name": nome.value,
+      "name": nome2,
       "username": usuario.username,
-      "password": senha.value,
-      "avatar_url": imagem.value
+      "password": senha2,
+      "avatar_url": imagem2
     }
 
 
     try {
       let token = localStorage.getItem("token");
 
-      // const response = await fetch("http://192.168.89.186:8087/api/v1/users/"+usuario.id, {
+      // const response = await fetch("http://192.168.90.220:8087/api/v1/users/"+usuario.id, {
 
-      const response = await fetch("http://localhost:8087/api/v1/users/" + usuario.id, {
+       const response = await fetch("http://localhost:8087/api/v1/users/" + usuario.id, {
 
         method: "PATCH",
         headers: {
@@ -132,9 +141,9 @@ let requisitarDados = async function () {
 
   try {
 
-    // const response = await fetch("http://192.168.89.186:8087/api/v1//auth/token", {
+    // const response = await fetch("http://192.168.90.220:8087/api/v1/users/me", {
 
-    const response = await fetch("http://localhost:8087/api/v1/users/me", {
+     const response = await fetch("http://localhost:8087/api/v1/users/me", {
 
       method: "GET",
       headers: {
