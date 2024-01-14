@@ -36,6 +36,7 @@ botaoSim.addEventListener("click", function (event) {
 
     login.LogeDeslog("voltar");
 
+
 })
 
 let BotaoNao = document.getElementById("nao");

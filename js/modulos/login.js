@@ -1,5 +1,5 @@
 import alterar from "./alterar.js";
-
+import boards from "./boards.js";
 // trocando da tela login para cadastro
 let alogin = document.getElementById("Cadastrar");
 
@@ -89,7 +89,10 @@ let LogeDeslog =  function (sentido) {
     document.getElementById("icone").style.display = "inline";
     document.getElementById("usuario").style.display = "flex";
 
+    boards.montarQuadros();
+
     atualizarUsuario(); 
+    
    
   }
 
@@ -98,6 +101,7 @@ let LogeDeslog =  function (sentido) {
     document.getElementById("login").style.display = "grid";
     document.getElementById("princi").style.display = "none";
     document.getElementById("usuario").style.display = "none";
+    boards.desmontarQuadros();
 
 
 

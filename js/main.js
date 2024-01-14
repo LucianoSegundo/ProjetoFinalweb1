@@ -4,7 +4,7 @@ import login from "./modulos/login.js";
 import alterar from "./modulos/alterar.js";
 import apagar from "./modulos/apagar.js";
 import barraLateral from "./modulos/barraLateral.js";
-
+import boards from "./modulos/boards.js";
 
 login.TestarLogin();
 
