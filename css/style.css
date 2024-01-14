@@ -22,7 +22,7 @@ body {
 
 #barra {
   display: flex;
-  width: 100vw;
+  width: 98.5vw;
   height: 8vh;
   background-color: rgb(253, 253, 253);
   align-items: center;
@@ -42,6 +42,7 @@ body {
   display: none;
   justify-content: end;
   gap: 1.5vw;
+  
 }
 
 #barra div #foto {
@@ -409,11 +410,11 @@ body {
 #princi {
   display: none;
   
-
     min-height: 92vh;
     background-color: var(--corFundo);
+
     grid-template-columns: 9vw 91vw;
-    grid-template-rows: 1fr 3fr 3fr 1fr;
+    grid-template-rows: 1fr 3fr 3fr auto;
     grid-template-areas:
       "vazio1 vazio2 "
       "vazio1 vazio2 "
@@ -455,21 +456,25 @@ body {
 #conteudo{
 
   grid-area: vazio2;
-  height: 92vh;
-  width: 91vw;
+  min-height: 92vh;
+
+  width: 89vw;
 }
 
 #conteudo #odo{
     display: flex;
-    height: 92vh;
-    width: 91vw;
+    min-height: 92vh;
+    width: 90vw;
     gap: 4%;
     flex-direction: column;
+    max-width: 89.8vw;
+    background-color: var(--corFundo);
   
 }
 
 #parte1{
 display: flex;
+max-width: 89.8vw;
 flex-direction: column;
   max-height: 45%;
   gap: 5%;
@@ -478,6 +483,7 @@ flex-direction: column;
 
 #recentes{
   display: flex;
+  max-width: 89.8vw;
   flex-wrap: wrap;
   justify-content: space-between;
   padding-left: 1%;
@@ -498,7 +504,8 @@ flex-direction: column;
   
 }
 .estrela:hover{
-background-color: yellowgreen;
+background-color: #fff700;
+
 }
 
 #addQuadro:hover{
@@ -512,9 +519,9 @@ background-color: yellowgreen;
   padding-top: 0.1%;
   margin-bottom: 1%;
    height: 12vh;
-
-   max-height:12vh;
-   width: 12vw;
+  background-color: var(--corFundo);
+   max-height:12h;
+   width: 15.5rem;
 
 }
 #acelora{
@@ -529,8 +536,10 @@ flex-direction: column;
 #quadros{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: start;
   padding-left: 1%;
+  max-width: 90vw;
+  gap: 2rem;
 
 }
 #avoritos{
@@ -610,4 +619,12 @@ flex-direction: column;
   border-radius: 20%;
   border: solid;
   border-color: var(--corbordabotao);
+}
+
+#Qaberto{
+
+  grid-area: vazio2;
+  min-height: 92vh;
+
+  width: 89vw;
 }
